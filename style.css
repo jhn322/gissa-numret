@@ -7,6 +7,7 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
+    background-color: rgb(167, 45, 45);
 }
 
 header {
@@ -60,14 +61,17 @@ p {
 }
 
 input {
+    height: 27px;
     border-radius: 50px;
     background-color: #1c1c1c;
-    opacity: 0.9;
-    color: rgb(239, 239, 239);
+    opacity: 90%;
+    border: none;
+    color: #efefef;
     outline: none;
+    text-align: center;
 }
 
 input:focus {
-    border: 2px solid rgba(196, 47, 33, 0.8);
+    border: 1.6px solid rgba(196, 47, 33, 0.8);
     opacity: 90%;
 }

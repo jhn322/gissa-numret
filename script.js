@@ -2,7 +2,7 @@
 const randomNumber = Math.floor(Math.random() * 101);
 
 // Antal chanser spelaren har
-let chances = 10; 
+let chances = 10;
 
 function checkGuess() {
   const guess = parseInt(document.getElementById('guessInput').value);
@@ -14,7 +14,7 @@ function checkGuess() {
   } else if (guess > randomNumber && guess < 100) {
     showMessage('Talet är för högt. Försök igen!');
   } else {
-    showMessage('Vänligen ange ett nummer mellan 0 och 100.');
+    showMessage('Ange ett nummer mellan 0 och 100.');
   }
 
   chances--;

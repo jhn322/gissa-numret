@@ -10,6 +10,7 @@ body {
     background: linear-gradient(to bottom right, #181818, #343434);
 }
 
+/* styling for box element */
 header {
     display: flex;
     flex-direction: column;
@@ -21,22 +22,20 @@ header {
     box-shadow: 0 6px 10px #00000069;
 }
 
+/* styling for the games headline */
 .guess-headline {
     color: #fff1f1;
     margin-top: 2rem;
     margin-bottom: 3.5rem;
 }
 
+/* styling for text above input */
 h2 {
     font-size: 1.2rem;
     color: #1c1c1c;
 }
 
-input[type="number"] {
-    padding: 8px;
-    font-size: 16px;
-}
-
+/* styling for the button */
 button {
     padding: 8px 16px;
     margin-top: 10px;
@@ -50,17 +49,23 @@ button {
     cursor: pointer;
 }
 
+/* hover color button */
 button:hover {
     transition: 0.3s;
     background-color: rgba(196, 47, 33, 0.8);
 }
 
+/* promt styling */
 p {
     margin-top: 20px;
     font-weight: bold;
+    color: #1c1c1c;
 }
 
-input {
+/* styling for input field */
+input[type="number"] {
+    padding: 8px;
+    font-size: 16px;
     height: 27px;
     border-radius: 50px;
     background-color: #1c1c1c;
@@ -71,7 +76,15 @@ input {
     text-align: center;
 }
 
+/* changed border color for input field */
 input:focus {
-    border: 1.6px solid rgba(196, 47, 33, 0.8);
+    border: 1.8px solid rgba(196, 47, 33, 0.8);
     opacity: 90%;
+}
+
+/* Remove number selector */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }

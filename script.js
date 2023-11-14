@@ -14,7 +14,7 @@ function checkGuess() {
   } else if (guess > randomNumber && guess < 100) {
     showMessage('Talet är för högt. Försök igen!');
   } else {
-    showMessage('Ange ett nummer mellan 0 och 100.');
+    showMessage('Du måste ange ett nummer mellan 0 och 100.');
   }
 
   chances--;

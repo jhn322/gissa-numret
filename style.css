@@ -7,7 +7,7 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: rgb(167, 45, 45);
+    background: linear-gradient(to bottom right, #181818, #343434);
 }
 
 header {

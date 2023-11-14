@@ -30,7 +30,7 @@ header {
 }
 
 /* styling for text above input */
-h2 {
+.guess-subheadline {
     font-size: 1.2rem;
     color: #1c1c1c;
 }

@@ -1,48 +1,60 @@
-// Generera ett slumpmässigt nummer mellan 0 och 100
-const randomNumber = Math.floor(Math.random() * 101);
+// Slumpmässigt nummer mellan 0 och 100
+const randomNumber = Math.floor(Math.random()*101);
+// Antalet gissningar användaren får gissa
+let count = 5; 
 
-// Antal chanser spelaren har
-let chances = 10;
+// Visar ett meddelande för användaren efter angivet tal
+function showMessage(messageFeedback) {
+  document.getElementById('messageFeedback').innerText = messageFeedback; 
+}
 
 function checkGuess() {
-  // Hämta användarens gissning från en input i HTML-dokumentet
-  const guess = parseInt(document.getElementById('guessInput').value);
-  // Hämta en referens till en lista där gissningar kommer att visas
-  const guessList = document.getElementById('guessList');
-  // Skapa ett nytt listelement för att visa användarens senaste gissning
-  const listItem = document.createElement('li');
-  
-  // Kolla om användaren har gissat rätt, för lågt, för högt eller angett ogiltigt nummer
+  const guess = Number(document.getElementById('guessInput').value);
+  const guessList = (document.getElementById('guessList'));
+  const showGuess = document.createElement('li'); 
+}
+
   if (guess === randomNumber) {
-    showMessage('Grattis! Du har gissat rätt nummer!');
-  } else if (guess < randomNumber && guess > 0) {
-    showMessage('Talet är för lågt. Försök igen!');
-  } else if (guess > randomNumber && guess < 100) {
-    showMessage('Talet är för högt. Försök igen!');
+    showMessage('Grattis! Du gissade rätt nummer!');
+  } else if (guess < 0 || guess > 100 || isNaN(guess)) {
+    showMessage('Du måste ange ett nummer mellan 0 till 100.');
+  } else if (guess < randomNumber) {
+    showMessage('Talet är för litet. Gissa högre!');
   } else {
-    showMessage('Vänligen ange ett nummer mellan 0 och 100.');
+    showMessage('Talet är för högt. Gissa lägre!');
   }
 
-  // Lägg till användarens gissning i listan
-  listItem.textContent = `Gissning: ${guess}`;
+
+
+
+
+
+  // if (guess === randomNumber) {
+  //   showMessage('Grattis! Du har gissat rätt nummer!'); // Meddelande om rätt gissning
+  // } else if (guess < 0 || guess > 100 || isNaN(guess)) {
+  //   showMessage('Vänligen ange ett nummer mellan 0 och 100.'); // Meddelande om ogiltig gissning
+  // } else {
+  //   showMessage(guess < randomNumber ? 'Talet är för lågt. Försök igen!' : 'Talet är för högt. Försök igen!'); // Meddelande om gissningen är för låg eller för hög
+  // }
+
+  listItem.textContent = `Gissning: ${guess}`; // Visar användarens gissning i listan
   guessList.appendChild(listItem);
 
-  // Minska antalet kvarvarande chanser efter varje gissning
-  chances--;
+  count--; // Minskar antalet tillgängliga gissningar
 
-  // Om användaren har använt alla chanser, visa det vinnande numret och avaktivera inputfältet
-  if (chances === 0) {
-    showMessage(`Tyvärr, du har använt alla dina chanser. Rätt nummer var ${randomNumber}.`);
-    disableInput();
+  if (count === 0) {
+    showMessage(`Tyvärr, du har använt alla dina chanser. Rätt nummer var ${randomNumber}.`); // Meddelande om slutet av gissningarna
+    disableInput(); // Avaktiverar gissningsinputfältet
   }
 }
 
-// Funktion för att visa meddelanden till användaren
-function showMessage(message) {
-  document.getElementById('message').innerText = message;
+function showMessage(messageFeedback) {
+  document.getElementById('message').innerText = messageFeedback; // Visar meddelandet för användaren
 }
 
-// Funktion för att avaktivera gissningsinput när spelet är slut
 function disableInput() {
-  document.getElementById('guessInput').disabled = true;
+  document.getElementById('guessInput').disabled = true; // Avaktiverar gissningsinputfältet
 }
+
+
+// listItem = showGuess

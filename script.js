@@ -12,7 +12,7 @@ function checkGuess() {
   const guess = Number(document.getElementById('guessInput').value);
   const guessList = (document.getElementById('guessList'));
   const showGuess = document.createElement('li'); 
-}
+
 
   if (count === randomNumber) {
     showMessage('Grattis! Du gissade rätt nummer!');
@@ -25,7 +25,7 @@ function checkGuess() {
   }
 
   showGuess.textContent =`${count}`;
-  guessList.appendChild(showGuess)
+  guessList.appendChild(showGuess);
 
   count--;
 
@@ -33,6 +33,7 @@ function checkGuess() {
     showMessage(`Tyvärr, du har använt upp alla dina gissningar. Rätt nummer var ${randomNumber}.`);
     disableInput();
   }
+} 
 
 function disableInput() {
   document.getElementById('guessInput').disabled = true; // Avaktiverar gissningsinputfältet

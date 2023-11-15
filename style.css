@@ -89,7 +89,7 @@ p {
     color: #1c1c1c;
 }
 
-.guessList {
+.guess-list {
     list-style: none;
     display: flex;
     color: #d60909;

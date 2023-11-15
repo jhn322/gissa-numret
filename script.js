@@ -28,7 +28,7 @@ function checkGuess() {
   }
 
   // Visar användarens gissning i listan under knappen
-  showGuess.textContent =`${guess}`;
+  showGuess.textContent =`${guess} ${guess < randomNumber ? '<' : guess > randomNumber ? '>' : ''}`;
   guessList.appendChild(showGuess);
 
   // Minskar antalet gissningar med 1

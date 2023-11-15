@@ -14,13 +14,26 @@ function checkGuess() {
   const showGuess = document.createElement('li'); 
 }
 
-  if (guess === randomNumber) {
+  if (count === randomNumber) {
     showMessage('Grattis! Du gissade rätt nummer!');
-  } else if (guess < 0 || guess > 100 || isNaN(guess)) {
+  } else if (count < 0 || count > 100 || isNaN(count)) {
     showMessage('Du måste ange ett nummer mellan 0 till 100.');
-  } else if (guess < randomNumber) {
+  } else if (count < randomNumber) {
     showMessage('Talet är för litet. Gissa högre!');
   } else {
     showMessage('Talet är för högt. Gissa lägre!');
   }
 
+  showGuess.textContent =`${count}`;
+  guessList.appendChild(showGuess)
+
+  count--;
+
+  if (count === 0) {
+    showMessage(`Tyvärr, du har använt upp alla dina gissningar. Rätt nummer var ${randomNumber}.`);
+    disableInput();
+  }
+
+function disableInput() {
+  document.getElementById('guessInput').disabled = true; // Avaktiverar gissningsinputfältet
+}

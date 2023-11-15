@@ -16,7 +16,7 @@ header {
     flex-direction: column;
     align-items: center;
     width: 600px;
-    height: 400px;
+    height: 500px;
     background: linear-gradient(to bottom right, #ff3d3d, #ff993f, #e9ff3f);
     border-radius: 50px;
     box-shadow: 0 6px 10px #00000069;
@@ -84,7 +84,15 @@ button:hover {
 
 /* promt styling */
 p {
-    margin-top: 50px;
+    margin-top: 25px;
     font-weight: bold;
     color: #1c1c1c;
+}
+
+.guessList {
+    list-style: none;
+    display: flex;
+    color: #d60909;
+    font-weight: bold;
+    flex-direction: column;
 }

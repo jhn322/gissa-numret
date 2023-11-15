@@ -14,22 +14,22 @@ function checkGuess() {
   const showGuess = document.createElement('li'); 
 
 
-  if (count === randomNumber) {
+  if (guess === randomNumber) {
     showMessage('Grattis! Du gissade rätt nummer!');
-  } else if (count < 0 || count > 100 || isNaN(count)) {
+  } else if (guess < 0 || guess > 100 || isNaN(guess)) {
     showMessage('Du måste ange ett nummer mellan 0 till 100.');
-  } else if (count < randomNumber) {
+  } else if (guess < randomNumber) {
     showMessage('Talet är för litet. Gissa högre!');
   } else {
     showMessage('Talet är för högt. Gissa lägre!');
   }
 
-  showGuess.textContent =`${count}`;
+  showGuess.textContent =`${guess}`;
   guessList.appendChild(showGuess);
 
   count--;
 
-  if (count === 0) {
+  if (guess === 0) {
     showMessage(`Tyvärr, du har använt upp alla dina gissningar. Rätt nummer var ${randomNumber}.`);
     disableInput();
   }

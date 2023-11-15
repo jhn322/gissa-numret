@@ -2,7 +2,7 @@
 const randomNumber = Math.floor(Math.random() * 101);
 
 // Antal chanser spelaren har
-let chances = 10;
+let chances = 5;
 
 function checkGuess() {
   const guess = parseInt(document.getElementById('guessInput').value);

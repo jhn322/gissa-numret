@@ -1,5 +1,7 @@
 # JavaScript - Gissa numret
 
+Publicerad: https://jhn322.github.io/gissa-numret/
+
 Använder DOM:en för att interagera med HTML/CSS. Använder enbart Vanilla JavaScript (inget ramverk/bibliotek). Stylat i CSS efter egna preferenser.
 
 ## Spelregler

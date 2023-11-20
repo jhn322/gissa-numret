@@ -8,14 +8,21 @@ function showMessage(messageFeedback) {
   document.getElementById('messageFeedback').innerText = messageFeedback; 
 }
 
+// Återställer antal gissnigar till 5
 function resetGame() {
   count = 5;
   randomNumber = Math.floor(Math.random() * 101);
+  // Visar meddelande på nytt
   showMessage('Gissa ett nummer mellan 0 till 100');
+  // Slår på input för gissning
   document.getElementById('guessInput').disabled = false;
+  // Tar bort tidigare gissningstext
   document.getElementById('messageFeedback').innerText = '';
+  // Hämtar listan av gissningar
   const guessList = document.getElementById('guessList');
+  // Rensar gissningar
   guessList.innerHTML = '';
+  // Slår på knapp
   document.querySelector('.button-check').disabled = false;
 }
 

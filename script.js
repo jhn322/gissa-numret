@@ -1,11 +1,22 @@
 // Slumpmässigt nummer mellan 0 och 100
-const randomNumber = Math.floor(Math.random()*101);
+let randomNumber = Math.floor(Math.random()*101);
 // Antalet gissningar användaren får gissa
 let count = 5; 
 
 // Visar ett meddelande för användaren efter angivet tal
 function showMessage(messageFeedback) {
   document.getElementById('messageFeedback').innerText = messageFeedback; 
+}
+
+function resetGame() {
+  count = 5;
+  randomNumber = Math.floor(Math.random() * 101);
+  showMessage('Gissa ett nummer mellan 0 till 100');
+  document.getElementById('guessInput').disabled = false;
+  document.getElementById('messageFeedback').innerText = '';
+  const guessList = document.getElementById('guessList');
+  guessList.innerHTML = '';
+  document.querySelector('.button-check').disabled = false;
 }
 
 function checkGuess() {
@@ -34,15 +45,17 @@ function checkGuess() {
   // Minskar antalet gissningar med 1
   count--;
 
-  // Om antalet gissningar uppnåt utan rätt svar anges detta
   if (count === 0 && guess !== randomNumber) {
     showMessage(`Tyvärr, du har använt upp alla dina gissningar. Rätt nummer var ${randomNumber}.`);
     // Avaktiverar inputfältet
     disableInput();
+    // Ändrar knapp färg till grå vid förlust
+    document.querySelector('.button-check').style.backgroundColor = '#808080'; 
   }
-  
+}
+
   // Avslutar spelet
-    function disableInput() {
-    document.getElementById('guessInput').disabled = true; // Avaktiverar gissningsinputfältet
-  }
-} 
+function disableInput() {
+  document.getElementById('guessInput').disabled = true;
+  document.querySelector('.button-check').disabled = true;
+}

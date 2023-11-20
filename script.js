@@ -2,6 +2,13 @@
 let randomNumber = Math.floor(Math.random()*101);
 // Antalet gissningar användaren får gissa
 let count = 5; 
+// variabel för att lagra originala färgen på knappen
+let originalColor = '';
+
+window.onload = function () {
+  // Lagrar originella färgen på knappen
+  originalColor = window.getComputedStyle(document.querySelector('.button-check')).backgroundColor;
+}
 
 // Visar ett meddelande för användaren efter angivet tal
 function showMessage(messageFeedback) {
@@ -24,6 +31,11 @@ function resetGame() {
   guessList.innerHTML = '';
   // Slår på knapp
   document.querySelector('.button-check').disabled = false;
+
+  // Återställer tillbaka färgen på gissa knappen
+  if (originalColor !== '') {
+    document.querySelector('.button-check').style.backgroundColor = originalColor;
+  }
 }
 
 function checkGuess() {
@@ -56,8 +68,12 @@ function checkGuess() {
     showMessage(`Tyvärr, du har använt upp alla dina gissningar. Rätt nummer var ${randomNumber}.`);
     // Avaktiverar inputfältet
     disableInput();
-    // Ändrar knapp färg till grå vid förlust
-    document.querySelector('.button-check').style.backgroundColor = '#808080'; 
+    // Kontrollerar om originalColor är en tom sträng
+    if (originalColor === '') {
+      originalColor = window.getComputedStyle(document.querySelector('.button-check')).backgroundColor;
+    }
+    // Ändrar färgen på .button-check till grå
+    document.querySelector('.button-check').style.backgroundColor = '#808080';
   }
 }
 

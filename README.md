@@ -1,4 +1,4 @@
-# JavaScript - Gissa numret
+# JavaScript - Guess the Number
 
 Publicerad: https://jhn322.github.io/guess-the-number/
 

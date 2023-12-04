@@ -4,19 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gissa Talet</title>
+    <title>Guess the Number</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <header>
-        <h1 class="guess-headline">Välkommen till Gissa Numret!</h1>
+        <h1 class="guess-headline">Welcome to Guess the Number!</h1>
         <div>
-            <h2 class="guess-subheadline">Gissa ett nummer mellan 0 till 100</h2>
+            <h2 class="guess-subheadline">Guess a number between 0 to 100</h2>
         </div>
         <input id="guessInput" type="number" placeholder="Skriv din gissning här">
-        <button onclick="checkGuess()" class="button-check">Gissa</button>
-        <button onclick="resetGame()" class="button-reset">Återställ</button>
+        <button onclick="checkGuess()" class="button-check">Guess</button>
+        <button onclick="resetGame()" class="button-reset">Reset</button>
         <p id="messageFeedback"></p>
         <ul class="guess-list" id="guessList"></ul>
     </header>

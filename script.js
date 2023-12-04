@@ -20,7 +20,7 @@ function resetGame() {
   count = 5;
   randomNumber = Math.floor(Math.random() * 101);
   // Visar meddelande på nytt
-  showMessage('Gissa ett nummer mellan 0 till 100');
+  showMessage('Guess a number between 0 to 100');
   // Slår på input för gissning
   document.getElementById('guessInput').disabled = false;
   // Tar bort tidigare gissningstext
@@ -48,13 +48,13 @@ function checkGuess() {
 
   // If-sats som meddelar användaren vid rätt & ogiltig samt om för låg eller hög inmatning
   if (guess === randomNumber) {
-    showMessage('Grattis! Du gissade rätt nummer!');
+    showMessage('Congratulations! You guessed correctly!');
   } else if (guess < 0 || guess > 100 || isNaN(guess)) {
-    showMessage('Du måste ange ett nummer mellan 0 till 100.');
+    showMessage('You need to specify a number between 0 to 100.');
   } else if (guess < randomNumber) {
-    showMessage('Talet är för lågt. Gissa högre!');
+    showMessage('The number is too low. Guess higher!');
   } else {
-    showMessage('Talet är för högt. Gissa lägre!');
+    showMessage('The number is too high. Guess lower!');
   }
 
   // Visar användarens gissning i listan under knappen
@@ -65,7 +65,7 @@ function checkGuess() {
   count--;
 
   if (count === 0 && guess !== randomNumber) {
-    showMessage(`Tyvärr, du har använt upp alla dina gissningar. Rätt nummer var ${randomNumber}.`);
+    showMessage(`Sorry, you've used up all your guesses. The correct number was ${randomNumber}.`);
     // Avaktiverar inputfältet
     disableInput();
     // Kontrollerar om originalColor är en tom sträng

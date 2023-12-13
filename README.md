@@ -1,6 +1,10 @@
 # JavaScript - Guess the Number
 
-Publicerad: https://jhn322.github.io/guess-the-number/
+## Webbsida
+
+[GitHub Pages](https://jhn322.github.io/guess-the-number/)
+
+[Netlify](https://jhn-guessthenumber.netlify.app/)
 
 Använder DOM:en för att interagera med HTML/CSS. Använder enbart Vanilla JavaScript (inget ramverk/bibliotek). Stylat i CSS efter egna preferenser.
 
